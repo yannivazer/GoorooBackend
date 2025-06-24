@@ -39,6 +39,11 @@ function generateLicense() {
   return `${part()}-${part()}-${part()}`;
 }
 
+app.get('/', (req, res) => {
+  res.send('✅ Serveur Gooroo actif !');
+});
+
+
 app.post("/generate", async (req, res) => {
     const email = req.body.email;
     const license = generateLicense();
